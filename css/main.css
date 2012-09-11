@@ -150,7 +150,7 @@ th {
     text-transform: uppercase;
     text-align: left;
     padding: 6px 6px 6px 12px;
-    background: #CAE8EA url(../img/bg_header.jpg) no-repeat;
+    background: #CAE8EA url(../img/bg_header.jpg) repeat-x;
 }
 
 th.nobg {
