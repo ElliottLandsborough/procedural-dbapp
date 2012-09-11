@@ -9,10 +9,7 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/kalendae.css">
-        <link rel="stylesheet" href="css/slabtext.css">
+        <link rel="stylesheet" href="/work/min/b=work/css&amp;f=normalize.css,main.css,kalendae.css,slabtext.css" />
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
     </head>
     <body>

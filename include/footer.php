@@ -1,8 +1,6 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/kalendae.js"></script>
-        <script src="js/main.js"></script>
+        <script src="/work/min/b=work/js&amp;f=plugins.js,kalendae.js,main.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
