@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 // connect to db
 require 'include/db.php';
 // load functions

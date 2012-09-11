@@ -7,12 +7,15 @@ function query($data=null)
 		$result=mysqli_query($db,$data['query']);
 		if ($result->num_rows>0)
 		{
-			$array=$result->fetch_all(MYSQLI_ASSOC);
+			while ($row = $result->fetch_assoc()) {
+				$array[]=$row;
+			}
 			$data['result_array']=$array;
 			return $data;
 		}
 		else
 		{
+			echo lols;
 			return false;
 		}
 		
