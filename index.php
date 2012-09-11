@@ -23,7 +23,8 @@ if (isset($_POST['savething']))
 		}
 		else
 		{
-			$cleanfields[$sql[$key]]=mysql_real_escape_string($_POST[$field]);
+			global $db;
+			$cleanfields[$sql[$key]]=mysqli_real_escape_string($db,$_POST[$field]);
 		}
 	}
 	if ($formerror===null&&isset($fields))
