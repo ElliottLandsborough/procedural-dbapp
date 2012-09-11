@@ -34,14 +34,54 @@ function forminput($data=null)
 	return $html;
 }
 
-function getfields()
+function getfields($tofilter=null,$orderby=null,$order=null)
 {
+	$append=null;
+	if(is_array($tofilter))
+	{
+		$append.=' AND (';
+		foreach ($tofilter as $category_id)
+		{
+			$append.=' table1.category_id="'.$category_id.'" OR';
+		}
+		if (substr($append,-2)=='OR')
+		{
+			$append=substr($append,0,-2);
+		}
+		$append.=' )';
+	}
+	$p['name']='category_name';
+	$p['date']='item_date';
+	$p['person']='item_person';
+	$p['text']='item_text';
+	if($orderby!==null&&isset($p[$orderby]))
+	{
+		$column=$p[$orderby];
+	}
+	else
+	{
+		$column=' category_name ';
+	}
+	if($order!==null)
+	{
+		if ($order=='a')
+		{
+			$direction=' ASC ';
+		}
+		else
+		{
+			$direction=' DESC ';
+		}
+	}
+	else
+	{
+		$direction=' ASC ';
+	}
+	$orderstring=' ORDER BY '.$column.' '.$direction.' ';
 	$data['query']='
 SELECT table1.item_id,table1.category_id,categories.category_name,table1.item_date,table1.item_person,table1.item_text 
 FROM table1,categories 
-WHERE table1.category_id=categories.category_id 
-ORDER BY category_name ASC;
-	';
+WHERE table1.category_id=categories.category_id '.$append.' '.$orderstring.';';
 	$result=query($data);
 	$fields=$result['result_array'];
 	return $fields;
@@ -53,6 +93,26 @@ function getcategories()
 	$result=query($data);
 	$categories=$result['result_array'];
 	return $categories;
+}
+
+function filtergen()
+{
+	$fields=getfields();
+	if($fields)
+	{
+		foreach ($fields as $item)
+		{
+			$availablecats[$item['category_id']]=$item['category_name'];
+		}
+	}
+	if (isset($availablecats))
+	{
+		return $availablecats;
+	}
+	else
+	{
+		return false;
+	}
 }
 
 function categorydropdown($selected=null)
@@ -105,7 +165,7 @@ function update($table=null,$fields=null,$wherefield=null)
 {
 	if (is_array($fields)&&$table!=null&&count($fields)>0&&$wherefield!=null&&strlen($wherefield)>0)
 	{
-		insert($table,$fields,$wherefield);
+		return insert($table,$fields,$wherefield);
 	}
 	else
 	{
@@ -159,7 +219,14 @@ function insert($table=null,$fields=null,$wherefield=null)
 		}
 		global $db;
 		$result=mysqli_query($db,$query);
-		return $result;
+		if(mysqli_error($db))
+		{
+			return false;
+		}
+		else
+		{
+			return true;
+		}
 	}
 	else
 	{

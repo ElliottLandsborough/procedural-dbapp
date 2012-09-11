@@ -1,10 +1,7 @@
 Procedural database editor with ajax/json/php/mysql/html5/css3
 ==============================================================
 
-To do:
- - sort by all rows
- - display only rows containing specified categories
- - some nicer styles
+demo: http://el.lc/work/
 
 Done:
  - add data to mysql
@@ -12,6 +9,9 @@ Done:
  - default sorted by category
  - editable rows
  - some cool frontend stuff
+ - some nicer styles
+ - sort by all rows - done (click on row header to sort)
+ - display only rows containing specified categories
 
 DB Structure:
 

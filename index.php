@@ -69,7 +69,28 @@ if (isset($_GET['p']))
 	$page=$_GET['p'];
 	if ($page=='jsondata')
 	{
-		echo json_encode(getfields());
+		$tofilter=null;
+		$cats=filtergen();
+		if (isset($_GET['filter'])&&$_GET['filter']=='1')
+		{
+			foreach ($cats as $category_id=>$category_name)
+			{
+				if(isset($_GET[$category_id])&&$_GET[$category_id]=='1')
+				{
+					$tofilter[]=$category_id;
+				}
+			}
+		}
+		$order=null;
+		$orderby=null;
+		if (isset($_GET['orderby'])&&isset($_GET['order']))
+		{
+			$orderby=$_GET['orderby'];
+			$order=$_GET['order'];
+		}
+		$json['fields']=getfields($tofilter,$orderby,$order);
+		$json['cats']=$cats;
+		echo json_encode($json);
 	}
 }
 else

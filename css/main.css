@@ -93,21 +93,192 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+@font-face 
+            {                            
+            font-family: 'LeagueGothicRegular';
+            src: url('../font/League_Gothic-webfont.eot');
+            src: url('../font/League_Gothic-webfont.eot?#iefix') format('embedded-opentype'),
+            url('../font/League_Gothic-webfont.woff') format('woff'),
+            url('../font/League_Gothic-webfont.ttf') format('truetype'),
+            url('../font/League_Gothic-webfont.svg#LeagueGothicRegular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            }
+
 .red {color:red;}
 .green {color:green;}
+body {font: 16px/1.8 "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;}
+p.by {margin:0px auto;width:300px;}
+
+h1
+            {
+            text-align:left;
+            font-family:'LeagueGothicRegular', "Impact", Charcoal, Arial Black, Gadget, Sans serif;
+            text-transform: uppercase;           
+            line-height:-10px;   
+            color:#222;             
+            /* Remember to set the correct font weight if using fontface */
+            font-weight:normal;
+            word-spacing: 5px; letter-spacing: 0px; font-size: 49px; 
+            width:300px;
+            margin:0px auto;
+}
+
+h2 {font-size:20px;}
+
+#datatable {
+    width: 90%;
+    padding: 0;
+    margin: 0 auto;
+    border-left: 1px solid #C1DAD7;
+}
+
+caption {
+    padding: 20px auto 5px auto;
+    width: 100%;    
+    font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    text-align: right;
+}
+
+th {
+    font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #4f6b72;
+    border-right: 1px solid #C1DAD7;
+    border-bottom: 1px solid #C1DAD7;
+    border-top: 1px solid #C1DAD7;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: left;
+    padding: 6px 6px 6px 12px;
+    background: #CAE8EA url(../img/bg_header.jpg) no-repeat;
+}
+
+th.nobg {
+    border-top: 0;
+    border-left: 0;
+    border-right: 1px solid #C1DAD7;
+    background: none;
+}
+
+td {
+    border-right: 1px solid #C1DAD7;
+    border-bottom: 1px solid #C1DAD7;
+    background: #fff;
+    padding: 6px 6px 6px 12px;
+    color: #4f6b72;
+    font-size:12px;
+}
 
 
+td.alt {
+    background: #F5FAFA;
+    color: #797268;
+}
 
+th.spec {
+    border-left: 1px solid #C1DAD7;
+    border-top: 0;
+    background: #fff url(../img/bullet1.gif) no-repeat;
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
 
+th.specalt {
+    border-left: 1px solid #C1DAD7;
+    border-top: 0;
+    background: #f5fafa url(../img/bullet2.gif) no-repeat;
+    font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+    color: #797268;
+}
 
+.form input, .form textarea { 
+    padding: 9px;
+    border: solid 1px #E5E5E5;
+    outline: 0;
+    width: 200px;
+    background: #FFFFFF url(../img/bg_form.png) left top repeat-x;
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    }
 
+.form select {
 
+    margin: 9px;
+    border: solid 1px #E5E5E5;
+    outline: 0;
+    width: 200px;
+    background: #FFFFFF url(../img/bg_form.png) left top repeat-x;
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;
+}
 
+.form textarea { 
+    width: 400px;
+    max-width: 400px;
+    height: 150px;
+    line-height: 150%;
+    }
 
+.form input:hover, .form textarea:hover,
+.form input:focus, .form textarea:focus { 
+    border-color: #C9C9C9; 
+    -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;
+    }
 
+.form label { 
+    margin-left: 10px; 
+    color: #999999;
+    }
 
+.form .submit input {
+    width: auto;
+    padding: 9px 15px;
+    background: #617798;
+    border: 0;
+    font-size: 14px;
+    color: #FFFFFF;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    cursor: pointer;
+    margin-bottom:10px;
+    }
 
+.formcont
+{
+    display:none;
+    position:absolute;
+    top:0px;
+    left:0px;
+    height:100%;
+    width:100%;
+    background-image:url(../img/trans.png);
+    background-repeat:repeat;
+}
 
+.form 
+{
+    margin:165px auto 0;
+    background-color:#fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width:400px;
+}
+
+.form p {margin:10px auto;width:300px;}
+
+.form h2 {text-align:center;margin:10px 0 0 0;padding:0;}
+
+.form .close {position:absolute;top:151px;margin-left:380px;}
+
+td form {width:100%; line-height:100%;}
+td form input {line-height:100%; vertical-align:middle; margin:4px;}
+td form span {position:relative;top:1px;}
 
 
 /* ==========================================================================
