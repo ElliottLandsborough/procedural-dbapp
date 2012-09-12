@@ -134,8 +134,8 @@ h2 {font-size:20px;}
 }
 
 caption {
-    padding: 20px auto 5px auto;
-    width: 100%;    
+    padding:0;
+    margin: 20px 2px 5px auto;
     font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
     text-align: right;
 }
