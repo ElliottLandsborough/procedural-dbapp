@@ -1,6 +1,8 @@
 Procedural database editor with ajax/json/php/mysql/html5/css3
 ==============================================================
 
+This is the answer to a technical test for a company who specifically wanted something basic, not object oriented and frameworkless.
+
 demo: http://el.lc/work/
 
 Done:
